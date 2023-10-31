@@ -14,6 +14,9 @@ int check_cycle(listint_t *list)
 	if (list == NULL)
 		return (0);
 
+	if (list->next == list)
+		return (1);
+
 	for (head = list; head != NULL; head = head->next)
 		for (curt = list; curt != head; curt = curt->next)
 		{
