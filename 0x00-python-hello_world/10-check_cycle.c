@@ -8,7 +8,8 @@
  */
 int check_cycle(listint_t *list)
 {
-	listint_t *head, *curt;
+	listint_t *curt;
+	listint_t *head;
 
 	if (list == NULL)
 		return (0);
