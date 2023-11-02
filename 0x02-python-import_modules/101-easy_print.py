@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-
-exec('import subprocess; subprocess.call(["echo", "#pythoniscool"])')
+if __name__ == "__main__":
+    exec('import subprocess; subprocess.call(["echo", "#pythoniscool"])')
