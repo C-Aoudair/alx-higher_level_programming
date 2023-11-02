@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# 2-args.py
 
 import sys
 
