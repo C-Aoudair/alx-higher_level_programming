@@ -11,7 +11,7 @@ class Square:
         Args:
             size (int): The size of the class.
         """
-        self.size = size
+        self.__size = size
 
     @property
     def size(self):
@@ -24,7 +24,6 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
-
 
     def area(self):
         return self.__size**2
