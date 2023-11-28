@@ -2,6 +2,8 @@
 
 """Define a Square class."""
 
+
 class Square:
-    """ Square class."""
+    """Square class."""
+
     ...
