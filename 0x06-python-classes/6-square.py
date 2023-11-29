@@ -6,7 +6,7 @@
 class Square:
     """Square class."""
 
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """Initialize the class.
         Args:
             size (int): The size of the class.
@@ -34,7 +34,7 @@ class Square:
     def position(self, position):
         message = "position must be a tuple of 2 positive integers"
         if isinstance(position, tuple) and len(position) == 2:
-            if isinstance(position[0], int) and isinstance(position[1],int):
+            if isinstance(position[0], int) and isinstance(position[1], int):
                 if position[0] >= 0 and position[1] >= 0:
                     self.__position = position
                 else:
@@ -51,25 +51,9 @@ class Square:
         if not self.size:
             print("")
         else:
+            if self.position[1] > 0:
+                for i in range(self.position[1]):
+                    print()
             for i in range(self.size):
                 print(" " * self.position[0], end="")
                 print("#" * self.size)
-            """else:
-                for i in range(self.size):
-                    print(" " * self.position[0], end="")
-                    print("#" * self.size)
-
-my_square_1 = Square(3)
-my_square_1.my_print()
-
-print("--")
-
-my_square_2 = Square(3, (1, 1))
-my_square_2.my_print()
-
-print("--")
-
-my_square_3 = Square(3, (3, 0))
-my_square_3.my_print()
-
-print("--")"""
