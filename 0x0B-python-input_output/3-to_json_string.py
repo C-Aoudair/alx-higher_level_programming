@@ -2,21 +2,18 @@
 """Difine to_json_string function"""
 
 
-import json
-
 def to_json_string(my_obj):
     """Returns the JSON representation of an object(string).
     Args:
         my_obj: The string object.
     Return: The JSON representation of my_obj.
     """
-
+    import json
     return json.dumps(my_obj)
 
 
-if __name__ == "__main__"
 
-my_list = [1, 2, 3]
+"""my_list = [1, 2, 3]
 s_my_list = to_json_string(my_list)
 print(s_my_list)
 print(type(s_my_list))
@@ -41,4 +38,4 @@ try:
     print(s_my_set)
     print(type(s_my_set))
 except Exception as e:
-    print("[{}] {}".format(e.__class__.__name__, e))
+    print("[{}] {}".format(e.__class__.__name__, e))"""
