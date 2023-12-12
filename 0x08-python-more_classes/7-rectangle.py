@@ -13,7 +13,6 @@ class Rectangle:
         """initialize the object"""
 
         Rectangle.number_of_instances += 1
-        self.print_symbol = Rectangle.print_symbol
         self.width = width
         self.height = height
 
