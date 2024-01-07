@@ -50,6 +50,7 @@ Case9:
 	>>> bg.integer_validator("age", None)
         Traceback (most recent call last):
         TypeError: age must be an integer
+
 Case10:
 	>>> bg.integer_validator("age", {6,8})
         Traceback (most recent call last):
