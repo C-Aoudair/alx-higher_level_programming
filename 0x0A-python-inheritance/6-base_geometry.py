@@ -8,4 +8,4 @@ class BaseGeometry:
     def area(self):
         """Raises Exception with the massage area() is not implemented."""
 
-        raise Exception("area() is not implementeded")
+        raise Exception("area() is not implemented")
