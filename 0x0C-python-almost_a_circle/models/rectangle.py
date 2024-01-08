@@ -1,7 +1,5 @@
 #!/usr/bin/python3
 """Defines Rectangle class."""
-
-
 from models.base import Base
 
 
@@ -19,30 +17,40 @@ class Rectangle(Base):
     def width(self):
         return self.__width
 
-    @property.setter
+    @width.setter
     def width(self, value):
-        return self.__width = value
+        self.__width = value
 
     @property
     def height(self):
         return self.__height
 
-    @property.setter
+    @height.setter
     def height(self, value):
-        return self.__height = value
+        self.__height = value
 
     @property
     def x(self):
         return self.__x
 
-    @property.setter
+    @x.setter
     def x(self, value):
-        return self.__x = value
+        self.__x = value
 
-    property
+    @property
     def y(self):
         return self.__y
 
-    @property.setter
+    @y.setter
     def y(self, value):
-         return self.__y = value
+         self.__y = value
+
+
+r1 = Rectangle(10, 2)
+print(r1.id)
+
+r2 = Rectangle(2, 10)
+print(r2.id)
+
+r3 = Rectangle(10, 2, 0, 0, 12)
+print(r3.id)
