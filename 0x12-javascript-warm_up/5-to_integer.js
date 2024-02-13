@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const myNumber = (~~process.argv[2]);
+const myNumber = (Math.floor(process.argv[2]));
 
 if (myNumber) {
   console.log(`My number: ${myNumber}`);
