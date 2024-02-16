@@ -4,21 +4,19 @@ import MySQLdb
 import sys
 
 args = sys.argv
-if len(args) < 4:
-    sys.exit(1)
+if len(args) >= 4:
+    try:
+        db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
 
-try:
-    db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
+    except Exception as error:
+        print("Can't connect to database")
+        sys.exit(1)
 
-except Exception as error:
-    print("Can't connect to database")
-    sys.exit(1)
+    cursor = db_connection.cursor()
+    table = f"{sys.argv[3]}.states"
+    cursor.execute(f"SELECT * FROM {table} WHERE name LIKE 'N%';")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(f"{row}")
 
-cursor = db_connection.cursor()
-table = f"{sys.argv[3]}.states"
-cursor.execute(f"SELECT * FROM {table} WHERE name LIKE 'N%';")
-rows = cursor.fetchall()
-for row in rows:
-    print(f"{row}")
-
-db_connection.close()
+    db_connection.close()
