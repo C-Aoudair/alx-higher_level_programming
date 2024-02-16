@@ -9,7 +9,6 @@ try:
     db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
 
 except Exception as error:
-    print("Can't connect to database")
     sys.exit(1)
 
 cursor = db_connection.cursor()
@@ -24,4 +23,3 @@ try:
 except Exception as error:
     db_connection.close()
     sys.exit(1)
-
