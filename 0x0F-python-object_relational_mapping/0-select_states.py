@@ -5,13 +5,17 @@ import sys
 
 args = sys.argv
 
-db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
-cursor = db_connection.cursor()
-table = f"{sys.argv[3]}.states"
+try:
+    db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
+    cursor = db_connection.cursor()
+    table = f"{sys.argv[3]}.states"
 
-cursor.execute(f"SELECT * FROM {table} WHERE name LIKE 'N%';")
-rows = cursor.fetchall()
-for row in rows:
-    print(f"{row}")
+    cursor.execute(f"SELECT * FROM {table} WHERE name LIKE 'N%';")
+    rows = cursor.fetchall()
+    for row in rows:
+        print(f"{row}")
 
-db_connection.close()
+    db_connection.close()
+
+except Exception as error:
+    pass
