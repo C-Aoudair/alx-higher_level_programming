@@ -9,7 +9,7 @@ if __name__ == "__main__":
                                  passwd=sys.argv[2], db=sys.argv[3], port=3306)
     cursor = db_connect.cursor()
     cursor.execute(f"""SELECT * FROM states WHERE name
-                   LIKE BINARY '{sys.argv[4]}' ORDER BY id;""")
+                   LIKE BINARY 'arizona' ORDER BY id;""")
     rows = cursor.fetchall()
     for row in rows:
         print(row)
