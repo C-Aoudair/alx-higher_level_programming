@@ -5,13 +5,11 @@ if __name__ == "__main__":
     import MySQLdb
     import sys
 
-    args = sys.argv
     try:
-        db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
+        db_connection = MySQLdb.connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3])
         cursor = db_connection.cursor()
-        table = f"{sys.argv[3]}.states"
 
-        cursor.execute(f"SELECT * FROM {table} WHERE name LIKE 'N%';")
+        cursor.execute(f"SELECT * FROM states WHERE name LIKE 'N%';")
         rows = cursor.fetchall()
         for row in rows:
             print(f"{row}")
