@@ -6,10 +6,10 @@ if __name__ == "__main__":
     import sys
 
     try:
-        db_connection = MySQLdb.connect("localhost", sys.argv[1], sys.argv[2], sys.argv[3])
+        db_connection = MySQLdb.connect(host="localhost", port=3306, user=sys.argv[1], password=sys.argv[2], database=sys.argv[3])
         cursor = db_connection.cursor()
 
-        cursor.execute(f"SELECT * FROM states WHERE name LIKE 'N%';")
+        cursor.execute(f"SELECT * FROM states WHERE name LIKE 'N%' ORDER BY id;")
         rows = cursor.fetchall()
         for row in rows:
             print(f"{row}")
