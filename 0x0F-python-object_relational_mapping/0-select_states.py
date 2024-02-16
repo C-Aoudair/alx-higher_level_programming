@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 """this module for exicuting sql command via MySQLdb modeule."""
-import MySQLdb
-import sys
 
 if __name__ == "__main__":
+    import MySQLdb
+    import sys
+
     args = sys.argv
     try:
         db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
