@@ -4,6 +4,9 @@ import MySQLdb
 import sys
 
 args = sys.argv
+if len(args) < 4:
+    sys.exit(1)
+
 try:
     db_connection = MySQLdb.connect("localhost", args[1], args[2], args[3])
 
