@@ -16,7 +16,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    id = session.query(State.id).filter(State.name.like(sys.argv[4])).scalar()
+    id = session.query(State.id).filter(State.name.like('%s', sys.argv[4])).scalar()
     print(id)
 
     session.close()
