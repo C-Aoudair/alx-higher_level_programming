@@ -1,19 +1,27 @@
 #!/usr/bin/python3
-"""Contains the find_peak function"""
+""" contains find_peak function"""
 
 
 def find_peak(list_of_integers):
-    """Defines find_peak function"""
+    '''
+        Finds the peak in a list of numbers
+    '''
 
-    if not list_of_integers:
+    length = len(list_of_integers)
+    if length == 0:
         return None
-
-    if (list_of_integers[0] > list_of_integers[1]):
+    if length == 1:
         return list_of_integers[0]
+    if length == 2:
+        return max(list_of_integers)
 
-    for i in range(1, len(list_of_integers) - 1):
-        if (list_of_integers[i] >= list_of_integers[i - 1] and
-                list_of_integers[i] >= list_of_integers[i + 1]):
-            return list_of_integers[i]
+    middle = (length - 1) // 2
 
-    return list_of_integers[-1]
+    if (list_of_integers[middle] > list_of_integers[middle - 1] and
+    list_of_integers[middle] > list_of_integers[middle + 1]):
+        return list_of_integers[middle]
+
+    if list_of_integers[middle] > list_of_integers[middle + 1]:
+        return find_peak(list_of_integers[:middle])
+    else:
+        return find_peak(list_of_integers[middle + 1:])
