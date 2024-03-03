@@ -1,1 +1,2 @@
-O(nlon(n))
+Time Complexity: O(nlon(n))
+Space Complexity: O(1)

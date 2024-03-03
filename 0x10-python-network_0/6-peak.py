@@ -19,11 +19,11 @@ def find_peak(myList):
 
         if (myList[middle] > myList[middle - 1] and
                 myList[middle] > myList[middle + 1]):
-            break
+            return myList[middle]
 
-        if myList[middle + 1] > myList[middle - 1]:
+        if myList[middle + 1] > myList[middle]:
             left = middle + 1
         else:
             right = middle
 
-    return myList[left]
+    return myList[right]
