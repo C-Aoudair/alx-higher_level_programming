@@ -7,21 +7,19 @@ def find_peak(list_of_integers):
         Finds the peak in a list of numbers
     '''
 
-    length = len(list_of_integers)
-    if length == 0:
+    list_ = list_of_integers
+    # if there is no list of integers return None
+    if list_ == []:
         return None
-    if length == 1:
-        return list_of_integers[0]
-    if length == 2:
-        return max(list_of_integers)
+    length = len(list_)
 
-    middle = (length - 1) // 2
-
-    if (list_of_integers[middle] > list_of_integers[middle - 1] and
-    list_of_integers[middle] > list_of_integers[middle + 1]):
-        return list_of_integers[middle]
-
-    if list_of_integers[middle] > list_of_integers[middle + 1]:
-        return find_peak(list_of_integers[:middle])
-    else:
-        return find_peak(list_of_integers[middle + 1:])
+    start, end = 0, length - 1
+    while start < end:
+        mid = start + (end - start) // 2
+        if list_[mid] > list_[mid - 1] and list_[mid] > list_[mid + 1]:
+            return list_[mid]
+        if list_[mid - 1] > list_[mid + 1]:
+            end = mid
+        else:
+            start = mid + 1
+    return list_[start]
