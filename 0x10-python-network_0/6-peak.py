@@ -2,24 +2,28 @@
 """ contains find_peak function"""
 
 
-def find_peak(list_of_integers):
+def find_peak(myList):
     '''
         Finds the peak in a list of numbers
     '''
 
-    list_ = list_of_integers
-    # if there is no list of integers return None
-    if list_ == []:
+    if not myList:
         return None
-    length = len(list_)
 
-    start, end = 0, length - 1
-    while start < end:
-        mid = start + (end - start) // 2
-        if list_[mid] > list_[mid - 1] and list_[mid] > list_[mid + 1]:
-            return list_[mid]
-        if list_[mid - 1] > list_[mid + 1]:
-            end = mid
+    left = 0
+    right = len(myList) - 1
+
+    while left < right:
+
+        middle = (left + right) // 2
+
+        if (myList[middle] > myList[middle - 1] and
+                myList[middle] > myList[middle + 1]):
+            break
+
+        if myList[middle + 1] > myList[middle]:
+            left = middle + 1
         else:
-            start = mid + 1
-    return list_[start]
+            right = middle
+
+    return myList[middle]
