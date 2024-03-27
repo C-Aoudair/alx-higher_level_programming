@@ -3,6 +3,7 @@
 and displays the body of the response"""
 
 from urllib import request
+from urllib import error
 import sys
 
 
@@ -11,5 +12,5 @@ if __name__ == "__main__":
         with request.urlopen(sys.argv[1]) as response:
             print(response.read().decode('utf-8'))
 
-    except request.error.HTTPError as error:
+    except error.HTTPError as error:
         print(f"Error code: {error.code}")
