@@ -14,6 +14,6 @@ if __name__ == "__main__":
     if r.status_code == 200:
         commits = r.json()
         for commit in commits:
-            commitMessage = commit['commit']['message']
+            commit_sha = commit['sha']
             authorName = commit['commit']['author']['name']
-            print(f"{commitMessage}: {authorName}")
+            print(f"{commit_sha}: {authorName}")
