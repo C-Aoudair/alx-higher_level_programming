@@ -1,1 +1,1 @@
-$('#add_item').click(() => $('ul.my_list').append('<li>Item</li>'))
+$('#add_item').click(() => $('ul.my_list').append('<li>Item</li>'));
