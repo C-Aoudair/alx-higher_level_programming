@@ -7,13 +7,23 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    def test_1(self):
+    """Test Base class."""
 
-        b1 = Base()
-        self.assertTrue(b1.id == 1)
-
-        b2 = Base(12)
-        self.assertTrue(b2.id == 12)
-
-        b3 = Base()
-        self.assertTrue(b3.id == 2)
+    def test_0(self):
+        """Test Base class."""
+        b = Base()
+        self.assertEqual(b.id, 1)
+        b = Base()
+        self.assertEqual(b.id, 2)
+        b = Base(12)
+        self.assertEqual(b.id, 12)
+        b = Base()
+        self.assertEqual(b.id, 3)
+        b = Base(-1)
+        self.assertEqual(b.id, -1)
+        b = Base()
+        self.assertEqual(b.id, 4)
+        b = Base(0)
+        self.assertEqual(b.id, 0)
+        b = Base()
+        self.assertEqual(b.id, 5)    
