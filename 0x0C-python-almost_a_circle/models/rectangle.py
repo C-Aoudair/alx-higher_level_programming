@@ -85,7 +85,7 @@ class Rectangle(Base):
         for i, arg in enumerate(args):
             if i < 5:  # 5 is the number of attributes allowed
                 setattr(self, attributes[i], arg)
-        
+
         if not args or len(args) == 0:
             for key, value in kwargs.items():
                 if key in attributes:
