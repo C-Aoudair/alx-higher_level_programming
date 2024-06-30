@@ -27,11 +27,15 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             Rectangle("10", 20)
         with self.assertRaises(ValueError):
+            Rectangle(0, 20)
+        with self.assertRaises(ValueError):
             Rectangle(-10, 20)
 
     def test_invalid_height(self):
         with self.assertRaises(TypeError):
             Rectangle(10, "20")
+        with self.assertRaises(ValueError):
+            Rectangle(10, 0)
         with self.assertRaises(ValueError):
             Rectangle(10, -20)
 
