@@ -13,7 +13,9 @@ class Square(Rectangle):
 
     def __str__(self):
         """Returns string representation of Square class."""
-        return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.width)
+        return "[Square] ({}) {}/{} - {}".format(
+            self.id, self.x, self.y, self.width
+        )
 
     @property
     def size(self):
@@ -29,3 +31,16 @@ class Square(Rectangle):
             raise ValueError("width must be > 0")
         self.width = value
         self.height = value
+
+    def update(self, *args, **kwargs):
+        """Updates Square class."""
+        attributes = ["id", "size", "x", "y"]
+
+        for i, arg in enumerate(args):
+            if i < len(attributes):
+                setattr(self, attributes[i], arg)
+
+        if not args or len(args) == 0:
+            for key, value in kwargs.items():
+                if key in attributes:
+                    setattr(self, key, value)
